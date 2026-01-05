@@ -87,12 +87,19 @@ export default function Cart({ cart }) {
 
                                             <button
                                                 onClick={() =>
-                                                    updateQuantity(
-                                                        item.id,
-                                                        item.quantity + 1
-                                                    )
+                                                    updateQuantity(item.id, item.quantity + 1)
                                                 }
-                                                className="px-3 py-1 bg-gray-100 hover:bg-gray-200"
+                                                disabled={item.quantity >= item.product.stock_quantity}
+                                                className={`px-3 py-1 transition ${
+                                                    item.quantity >= item.product.stock_quantity
+                                                        ? 'bg-gray-200 text-gray-400 cursor-not-allowed'
+                                                        : 'bg-gray-100 hover:bg-gray-200'
+                                                }`}
+                                                title={
+                                                    item.quantity >= item.product.stock_quantity
+                                                        ? 'No more stock available'
+                                                        : 'Increase quantity'
+                                                }
                                             >
                                                 +
                                             </button>
