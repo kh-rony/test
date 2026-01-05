@@ -24,7 +24,7 @@ export default function ProductsIndex({ products }) {
                     >
                         {/* Product Image */}
                         <img
-                            src={`https://via.placeholder.com/300x200?text=${product.name}`}
+                            src={`https://placehold.co/300x200?text=${product.name}`}
                             alt={product.name}
                             className="rounded-md mb-4 w-full h-48 object-cover"
                         />

@@ -44,7 +44,7 @@ export default function OrdersIndex({ orders }) {
                                     >
                                         {/* Product Image */}
                                         <img
-                                            src={`https://via.placeholder.com/120x90?text=${item.product.name}`}
+                                            src={`https://placehold.co/120x90?text=${item.product.name}`}
                                             alt={item.product.name}
                                             className="rounded-md w-28 h-20 object-cover"
                                         />

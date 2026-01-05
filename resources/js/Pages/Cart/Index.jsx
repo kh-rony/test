@@ -50,7 +50,7 @@ export default function Cart({cart}) {
                                 className="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 flex gap-6">
                                 {/* Product Image */}
                                 <img
-                                    src={`https://via.placeholder.com/150x120?text=${item.product.name}`}
+                                    src={`https://placehold.co/150x120?text=${item.product.name}`}
                                     alt={item.product.name}
                                     className="rounded-lg w-36 h-28 object-cover"
                                 />
