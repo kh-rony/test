@@ -32,7 +32,7 @@ export default function AppLayout({ children }) {
                         href={route('products.index')}
                         className="text-2xl font-bold text-indigo-600"
                     >
-                        SimpleShop
+                        Simple Shopping Cart
                     </Link>
 
                     {/* Nav Links */}
@@ -48,7 +48,7 @@ export default function AppLayout({ children }) {
                             href={route('cart.index')}
                             className="font-semibold text-gray-700 hover:text-indigo-600"
                         >
-                            Cart
+                            My Cart
                         </Link>
 
                         <Link
