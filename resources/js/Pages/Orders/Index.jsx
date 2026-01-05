@@ -10,7 +10,7 @@ export default function OrdersIndex({ orders }) {
 
             {orders.length === 0 ? (
                 <div className="text-center text-gray-500 py-24">
-                    <p className="text-xl">You haven’t placed any orders yet 📦</p>
+                    <p className="text-xl">You haven’t placed any orders yet.</p>
                 </div>
             ) : (
                 <div className="space-y-8">

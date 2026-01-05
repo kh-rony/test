@@ -5,9 +5,16 @@
     <title>Low Stock Alert</title>
 </head>
 <body>
-<h1>Low Stock Alert</h1>
-<p>Product: {{ $productName }}</p>
-<p>Stock remaining: {{ $stockQty }}</p>
-<p>Please restock soon.</p>
+<h2>Low Stock Alert</h2>
+<p>
+    The product <strong>{{ $product->name }}</strong> is running low on stock.
+</p>
+<p>
+    Remaining quantity: <strong>{{ $product->stock_quantity }}</strong>
+</p>
+
+<p>
+    Please restock soon.
+</p>
 </body>
 </html>

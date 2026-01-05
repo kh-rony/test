@@ -14,6 +14,7 @@ class Product extends Model
         'price',
         'stock_quantity',
     ];
+
     public function cartItems()
     {
         return $this->hasMany(CartItem::class);

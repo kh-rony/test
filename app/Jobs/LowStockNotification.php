@@ -15,16 +15,24 @@ class LowStockNotification implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
-    public Product $product;
+    public int $productId;
 
-    public function __construct(Product $product)
+    public function __construct(int $productId)
     {
-        $this->product = $product;
+        $this->productId = $productId;
     }
 
-    public function handle(): void
+    public function handle()
     {
-        Mail::to(config('mail.admin_email'))
-            ->send(new LowStockMail($this->product));
+        $product = Product::findOrFail($this->productId);
+
+        $adminEmail = config('shop.admin_email');
+
+        if (! $adminEmail) {
+            logger()->error('ADMIN_EMAIL is not configured');
+            return;
+        }
+
+        Mail::to($adminEmail)->send(new LowStockMail($product));
     }
 }

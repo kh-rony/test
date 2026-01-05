@@ -64,7 +64,7 @@ class OrderController extends Controller
                 // Dispatch low stock notification
                 $threshold = config('shop.low_stock_threshold');
                 if ($product->stock_quantity <= $threshold) {
-                    LowStockNotification::dispatch($product);
+                    LowStockNotification::dispatch($product->id);
                 }
             }
 

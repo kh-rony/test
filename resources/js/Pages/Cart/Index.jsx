@@ -38,7 +38,7 @@ export default function Cart({cart}) {
 
             {items.length === 0 ? (
                 <div className="text-center text-gray-500 py-24">
-                    <p className="text-xl">Your cart is empty 🛒</p>
+                    <p className="text-xl">Your cart is empty.</p>
                 </div>
             ) : (
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
