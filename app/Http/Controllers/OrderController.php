@@ -73,7 +73,7 @@ class OrderController extends Controller
         });
 
         return redirect()
-            ->route('products.index')
+            ->route('orders.index')
             ->with('success', 'Order placed successfully!');
     }
 }
