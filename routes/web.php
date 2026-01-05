@@ -32,7 +32,7 @@ Route::middleware('auth')->group(function () {
 
 Route::middleware(['auth'])->group(function () {
 
-    // Products listing
+    // Products
     Route::get('/products', [ProductController::class, 'index'])
         ->name('products.index');
 

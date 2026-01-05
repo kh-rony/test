@@ -22,6 +22,10 @@ class LowStockMail extends Mailable
     {
         return $this
             ->subject('Low Stock Alert')
-            ->view('emails.low-stock');
+            ->view('emails.low-stock')
+            >with([
+                'productName' => $this->product->name,
+                'stockQty' => $this->product->stock_quantity,
+            ]);
     }
 }

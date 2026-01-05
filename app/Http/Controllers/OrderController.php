@@ -61,8 +61,9 @@ class OrderController extends Controller
                 // Reduce stock
                 $product->decrement('stock_quantity', $item->quantity);
 
-                // 🔔 Low stock job (threshold = 5)
-                if ($product->stock_quantity <= 5) {
+                // Dispatch low stock notification
+                $threshold = config('shop.low_stock_threshold');
+                if ($product->stock_quantity <= $threshold) {
                     LowStockNotification::dispatch($product);
                 }
             }
