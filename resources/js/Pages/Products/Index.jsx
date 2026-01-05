@@ -1,6 +1,7 @@
 import React from 'react';
 import { router } from '@inertiajs/react';
 import toast from 'react-hot-toast';
+import AppLayout from '@/Layouts/AppLayout';
 
 export default function ProductsIndex({ products }) {
 
@@ -61,3 +62,5 @@ export default function ProductsIndex({ products }) {
         </div>
     );
 }
+
+ProductsIndex.layout = page => <AppLayout>{page}</AppLayout>;

@@ -1,8 +1,9 @@
 import React from 'react';
-import { router } from '@inertiajs/react';
+import {router} from '@inertiajs/react';
 import toast from 'react-hot-toast';
+import AppLayout from "@/Layouts/AppLayout.jsx";
 
-export default function Cart({ cart }) {
+export default function Cart({cart}) {
     const items = cart?.items || [];
 
     const updateQuantity = (itemId, quantity) => {
@@ -10,7 +11,7 @@ export default function Cart({ cart }) {
 
         router.patch(
             route('cart.update', itemId),
-            { quantity },
+            {quantity},
             {
                 preserveScroll: true,
                 onSuccess: () => toast.success('Cart updated'),
@@ -46,8 +47,7 @@ export default function Cart({ cart }) {
                         {items.map((item) => (
                             <div
                                 key={item.id}
-                                className="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 flex gap-6"
-                            >
+                                className="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-6 flex gap-6">
                                 {/* Product Image */}
                                 <img
                                     src={`https://via.placeholder.com/150x120?text=${item.product.name}`}
@@ -141,10 +141,11 @@ export default function Cart({ cart }) {
                         </div>
 
                         <button
+                            onClick={() => router.post(route('checkout'))}
                             className="w-full py-3 rounded-xl text-white font-semibold shadow-md
-                            bg-gradient-to-r from-green-500 to-emerald-600
-                            hover:from-emerald-500 hover:to-green-600
-                            transition transform hover:scale-105"
+    bg-gradient-to-r from-green-500 to-emerald-600
+    hover:from-emerald-500 hover:to-green-600
+    transition transform hover:scale-105"
                         >
                             Proceed to Checkout
                         </button>
@@ -154,3 +155,5 @@ export default function Cart({ cart }) {
         </div>
     );
 }
+
+Cart.layout = page => <AppLayout>{page}</AppLayout>;

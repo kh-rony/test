@@ -7,6 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 class Cart extends Model
 {
     protected $fillable = ['user_id'];
+
+    /**
+     * Always load items with their product
+     */
+    protected $with = ['items.product'];
+
     public function user()
     {
         return $this->belongsTo(User::class);
@@ -16,9 +22,4 @@ class Cart extends Model
     {
         return $this->hasMany(CartItem::class);
     }
-
-    /**
-     * Always load items with their product
-     */
-    protected $with = ['items.product'];
 }
