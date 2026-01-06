@@ -68,8 +68,9 @@ class OrderController extends Controller
                 }
             }
 
-            // Clear cart
+            // Clear cart, delete items and the cart itself
             $cart->items()->delete();
+            $cart->delete();
         });
 
         return redirect()

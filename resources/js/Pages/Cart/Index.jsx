@@ -147,7 +147,7 @@ export default function Cart({cart}) {
     hover:from-emerald-500 hover:to-green-600
     transition transform hover:scale-105"
                         >
-                            Proceed to Checkout
+                            Place order
                         </button>
                     </div>
                 </div>
