@@ -25,10 +25,6 @@ class DailySalesReport implements ShouldQueue
             })
             ->get();
 
-//        if ($items->isEmpty()) {
-//            return; // no sales today, no email
-//        }
-
         $adminEmail = config('shop.admin_email');
 
         Mail::to($adminEmail)->send(new DailySalesReportMail($items));
