@@ -95,6 +95,18 @@ DB_USERNAME=your_database_username
 DB_PASSWORD=your_database_password
 ```
 
+**Mail** (for testing low-stock and daily report emails):
+
+```
+MAIL_MAILER=smtp
+MAIL_HOST=sandbox.smtp.mailtrap.io
+MAIL_PORT=2525
+MAIL_USERNAME=your_mailtrap_username
+MAIL_PASSWORD=your_mailtrap_password
+MAIL_ENCRYPTION=tls
+MAIL_FROM_ADDRESS="noreply@simpleshoppingcart.test"
+MAIL_FROM_NAME="Simple Shopping Cart"
+```
 Define `LOW_STOCK_THRESHOLD`:
 
 ```bash
